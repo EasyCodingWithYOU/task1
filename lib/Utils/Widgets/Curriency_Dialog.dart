@@ -9,7 +9,7 @@ class CurrencyDialog extends StatelessWidget {
     final currencyState = Provider.of<CurrencySelectionProvider>(context);
 
     return AlertDialog(
-      backgroundColor: Colors.cyan[100],
+      backgroundColor: ButtonBackGroundColor,
       title: Text('Select Currency'),
       content: Column(
         mainAxisSize: MainAxisSize.min,
@@ -23,7 +23,9 @@ class CurrencyDialog extends StatelessWidget {
           SizedBox(height: 20),
           // Show the continue button only when a currency is selected
           ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.green[200]),
+            style: ElevatedButton.styleFrom(
+                backgroundColor: bodyBackgroundColor,
+                foregroundColor: buttonForgroundColor),
             onPressed: currencyState.selectedCurrency != null
                 ? () {
                     Navigator.pop(context); // Close the dialog
@@ -55,7 +57,7 @@ class CurrencyDialog extends StatelessWidget {
             currencyState.clearSelection(); // Deselect if clicked again
           }
         },
-        activeColor: Colors.green,
+        activeColor: const Color.fromARGB(255, 142, 220, 146),
       ),
       title: Text(currency),
     );

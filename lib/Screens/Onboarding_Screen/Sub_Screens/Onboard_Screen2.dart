@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:task_app/Provider/Onboard_Provider/Onboard_Screen_2_provider.dart';
+import 'package:task_app/Utils/Colors/Colors_Name.dart';
 import 'package:task_app/Utils/List_Of_names.dart/List_Of_Names.dart';
 import 'package:task_app/Utils/Widgets/Custom_Top_Row.dart';
 
@@ -42,20 +43,23 @@ class OnboardScreen2 extends StatelessWidget {
                     },
                     child: Container(
                       decoration: BoxDecoration(
-                        color: checkboxState.checkboxStates[index]
-                            ? const Color.fromARGB(255, 80, 145, 83)
-                            : Colors.deepOrange[100],
+                        color: bodyBackgroundColor,
                         borderRadius:
                             BorderRadius.circular(20.r), // Rounded corners
-                        border: Border.all(color: Colors.grey),
+                        border: Border.all(
+                          width: 4.w,
+                          color: checkboxState.checkboxStates[index]
+                              ? const Color.fromARGB(255, 142, 220, 146)
+                              : textBorderColor,
+                        ),
                       ),
                       child: Center(
                         child: Text(
                           names[index], // Assuming `names` is a list of strings
                           style: TextStyle(
                             color: checkboxState.checkboxStates[index]
-                                ? Colors.white
-                                : Colors.black,
+                                ? Color.fromARGB(255, 142, 220, 146)
+                                : Colors.white,
                             fontSize: 80.sp,
                           ),
                           textAlign: TextAlign.center,

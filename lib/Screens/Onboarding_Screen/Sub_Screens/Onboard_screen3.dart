@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:task_app/Utils/Colors/Colors_Name.dart';
 import 'package:task_app/Utils/Widgets/Curriency_Dialog.dart';
 import 'package:task_app/Utils/Widgets/Custom_Top_Row.dart';
 import 'package:task_app/Utils/Widgets/Rounded_Icon_Button.dart';
@@ -53,7 +54,7 @@ class _OnboardScreen3State extends State<OnboardScreen3> {
                 },
                 child: Text(
                   "Do you want to Select Currency tap on me",
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: textColor),
                 )),
           ],
         ),

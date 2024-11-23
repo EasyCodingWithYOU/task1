@@ -32,7 +32,9 @@ class MyApp extends StatelessWidget {
             ChangeNotifierProvider(create: (_) => DatePickerProvider()),
           ],
           child: MaterialApp(
-            theme: ThemeData(scaffoldBackgroundColor: Colors.cyan[100]),
+            theme: ThemeData(
+                scaffoldBackgroundColor: Color(0xff274472),
+                textTheme: TextTheme()),
             debugShowCheckedModeBanner: false,
             home: SplashScreen(),
           ),
@@ -66,9 +68,9 @@ class _SplashScreenState extends State<SplashScreen> {
     } else {
       // await prefs.setBool('isFirstTime', true);
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => OnboardingScreen()));
-      // context,
-      // MaterialPageRoute(builder: (context) => DashBoardscreen()));
+          //     context, MaterialPageRoute(builder: (context) => OnboardingScreen()));
+          context,
+          MaterialPageRoute(builder: (context) => DashBoardscreen()));
     }
   }
 

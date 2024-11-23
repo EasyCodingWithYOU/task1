@@ -31,18 +31,25 @@ class OnboardScreen5 extends StatelessWidget {
               // Display Selected Date
               Text(
                 "Selected Date:",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                style: TextStyle(
+                    fontSize: 18,
+                    color: textColor,
+                    fontWeight: FontWeight.w500),
               ),
               SizedBox(height: 8),
               Text(
                 "${dateProvider.selectedDate.toLocal()}".split(' ')[0],
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontSize: 24,
+                    color: textColor,
+                    fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 30),
 
               // Button to Open Date Picker
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
+                    foregroundColor: buttonForgroundColor,
                     backgroundColor: ButtonBackGroundColor),
                 onPressed: () async {
                   // Show Date Picker Dialog

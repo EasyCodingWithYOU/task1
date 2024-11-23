@@ -38,11 +38,19 @@ class _OnboardScreen1State extends State<OnboardScreen1> {
                 SizedBox(
                   height: 300.h,
                 ),
+
                 TextField(
                   controller: _firstNameController,
                   decoration: InputDecoration(
                     labelText: 'First Name',
-                    border: OutlineInputBorder(),
+                    labelStyle: TextStyle(color: textColor),
+                    enabledBorder: OutlineInputBorder(
+                        borderSide:
+                            BorderSide(color: textBorderColor, width: 3.w)),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: textBorderColor, width: 3.0),
+                    ),
                   ),
                 ),
                 SizedBox(height: 56.h),
@@ -52,7 +60,14 @@ class _OnboardScreen1State extends State<OnboardScreen1> {
                   controller: _middleNameController,
                   decoration: InputDecoration(
                     labelText: 'Middle Name',
-                    border: OutlineInputBorder(),
+                    labelStyle: TextStyle(color: textColor),
+                    enabledBorder: OutlineInputBorder(
+                        borderSide:
+                            BorderSide(color: textBorderColor, width: 3.w)),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: textBorderColor, width: 3.0),
+                    ),
                   ),
                 ),
                 SizedBox(height: 56.h),
@@ -62,7 +77,14 @@ class _OnboardScreen1State extends State<OnboardScreen1> {
                   controller: _lastNameController,
                   decoration: InputDecoration(
                     labelText: 'Last Name',
-                    border: OutlineInputBorder(),
+                    labelStyle: TextStyle(color: textColor),
+                    enabledBorder: OutlineInputBorder(
+                        borderSide:
+                            BorderSide(color: textBorderColor, width: 3.w)),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: textBorderColor, width: 3.0),
+                    ),
                   ),
                 ),
                 SizedBox(height: 36.h),
@@ -71,6 +93,7 @@ class _OnboardScreen1State extends State<OnboardScreen1> {
                 Center(
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
+                        foregroundColor: buttonForgroundColor,
                         backgroundColor: ButtonBackGroundColor),
                     onPressed: () {
                       // Display the entered data

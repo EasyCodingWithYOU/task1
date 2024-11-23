@@ -29,18 +29,25 @@ class OnboardScreen4 extends StatelessWidget {
               // Display Selected Time
               Text(
                 "Selected Time:",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                style: TextStyle(
+                    fontSize: 18,
+                    color: textColor,
+                    fontWeight: FontWeight.w500),
               ),
               SizedBox(height: 8),
               Text(
                 timeProvider.selectedTime.format(context),
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontSize: 24,
+                    color: textColor,
+                    fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 30),
 
               // Button to Open Time Picker
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
+                    foregroundColor: buttonForgroundColor,
                     backgroundColor: ButtonBackGroundColor),
                 onPressed: () async {
                   // Show Time Picker Dialog
