@@ -4,8 +4,8 @@ const List names = [
   "Ecology",
   "Body",
   "Wellbeing",
-  "Lungs",
-  "Time",
+  "Withdrawal sympptoms",
+  "Missing out on social movements",
   "Trophies",
   "Nicotine"
 ];

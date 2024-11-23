@@ -6,8 +6,8 @@ import 'package:task_app/Provider/Auth_provider/Check_Box_State_provider.dart';
 import 'package:task_app/Provider/Onboard_Provider/Currency_Selection_Provider.dart';
 import 'package:task_app/Provider/Onboard_Provider/Date_picker_Provider.dart';
 import 'package:task_app/Provider/Onboard_Provider/Onboard_Screen_2_provider.dart';
+import 'package:task_app/Provider/Onboard_Provider/Onboard_provider.dart';
 import 'package:task_app/Provider/Onboard_Provider/Time_Picker_Provider.dart';
-import 'package:task_app/Screens/DashBoard_Screen/DashBoard_Screen.dart';
 import 'package:task_app/Screens/Onboarding_Screen/Onboarding_Screen.dart';
 
 void main() {
@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
       builder: (_, child) {
         return MultiProvider(
           providers: [
+            ChangeNotifierProvider(create: (_) => OnboardingProvider()),
             ChangeNotifierProvider(create: (_) => CheckboxState()),
             ChangeNotifierProvider(create: (_) => OnboardScreen2_provider()),
             ChangeNotifierProvider(create: (_) => CurrencySelectionProvider()),
@@ -68,9 +69,9 @@ class _SplashScreenState extends State<SplashScreen> {
     } else {
       // await prefs.setBool('isFirstTime', true);
       Navigator.pushReplacement(
-          //     context, MaterialPageRoute(builder: (context) => OnboardingScreen()));
-          context,
-          MaterialPageRoute(builder: (context) => DashBoardscreen()));
+          context, MaterialPageRoute(builder: (context) => OnboardingScreen()));
+      // context,
+      // MaterialPageRoute(builder: (context) => DashBoardscreen()));
     }
   }
 

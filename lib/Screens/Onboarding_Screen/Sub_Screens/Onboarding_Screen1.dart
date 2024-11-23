@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lottie/lottie.dart';
+
+import 'package:provider/provider.dart';
+import 'package:task_app/Provider/Onboard_Provider/Onboard_provider.dart';
 import 'package:task_app/Utils/Colors/Colors_Name.dart';
-import 'package:task_app/Utils/Lottie_Names/Lottie_Names.dart';
 import 'package:task_app/Utils/Widgets/Custom_Top_Row.dart';
 
 class OnboardScreen1 extends StatefulWidget {
+  @immutable
+  final PageController pageController;
+  OnboardScreen1({required this.pageController});
   @override
   _OnboardScreen1State createState() => _OnboardScreen1State();
 }
@@ -101,11 +105,17 @@ class _OnboardScreen1State extends State<OnboardScreen1> {
                       String middleName = _middleNameController.text;
                       String lastName = _lastNameController.text;
 
+                      context.read<OnboardingProvider>().updatePage(1);
+
                       // Show a snack bar with the entered names
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                             content:
                                 Text('Name: $firstName $middleName $lastName')),
+                      );
+                      widget.pageController!.nextPage(
+                        duration: Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
                       );
                     },
                     child: Text('Submit'),
