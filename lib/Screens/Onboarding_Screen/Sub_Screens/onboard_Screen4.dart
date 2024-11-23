@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:task_app/Provider/Onboard_Provider/Time_Picker_Provider.dart';
+import 'package:task_app/Utils/Colors/Colors_Name.dart';
+import 'package:task_app/Utils/Widgets/Custom_Top_Row.dart';
 
 class OnboardScreen4 extends StatelessWidget {
   @override
@@ -9,13 +12,20 @@ class OnboardScreen4 extends StatelessWidget {
 
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: Container(
           width: MediaQuery.of(context).size.width,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 25.0.h),
+                child: const CustomTopRow(
+                  textValue: 'Select Your Time',
+                ),
+              ),
+              SizedBox(
+                height: 400.h,
+              ),
               // Display Selected Time
               Text(
                 "Selected Time:",
@@ -30,6 +40,8 @@ class OnboardScreen4 extends StatelessWidget {
 
               // Button to Open Time Picker
               ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: ButtonBackGroundColor),
                 onPressed: () async {
                   // Show Time Picker Dialog
                   TimeOfDay? pickedTime = await showTimePicker(

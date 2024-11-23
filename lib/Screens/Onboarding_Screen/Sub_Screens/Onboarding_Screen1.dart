@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lottie/lottie.dart';
+import 'package:task_app/Utils/Colors/Colors_Name.dart';
+import 'package:task_app/Utils/Lottie_Names/Lottie_Names.dart';
+import 'package:task_app/Utils/Widgets/Custom_Top_Row.dart';
 
 class OnboardScreen1 extends StatefulWidget {
   @override
@@ -21,10 +25,19 @@ class _OnboardScreen1State extends State<OnboardScreen1> {
           child: Container(
             height: MediaQuery.of(context).size.height,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              // mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 25.0.h),
+                  child: const CustomTopRow(
+                    textValue: 'What should we call you',
+                  ),
+                ),
                 // First Name Text Field
+                SizedBox(
+                  height: 300.h,
+                ),
                 TextField(
                   controller: _firstNameController,
                   decoration: InputDecoration(
@@ -57,8 +70,8 @@ class _OnboardScreen1State extends State<OnboardScreen1> {
                 // Submit Button
                 Center(
                   child: ElevatedButton(
-                    style:
-                        ElevatedButton.styleFrom(backgroundColor: Colors.white),
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: ButtonBackGroundColor),
                     onPressed: () {
                       // Display the entered data
                       String firstName = _firstNameController.text;

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:task_app/Provider/Onboard_Provider/Date_picker_Provider.dart';
+import 'package:task_app/Utils/Colors/Colors_Name.dart';
+import 'package:task_app/Utils/Widgets/Custom_Top_Row.dart';
 
 class OnboardScreen5 extends StatelessWidget {
   @override
@@ -13,9 +16,18 @@ class OnboardScreen5 extends StatelessWidget {
         child: Container(
           width: MediaQuery.of(context).size.width,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 25.0.h),
+                child: const CustomTopRow(
+                  textValue: 'Select Your Date',
+                ),
+              ),
+              SizedBox(
+                height: 400.h,
+              ),
               // Display Selected Date
               Text(
                 "Selected Date:",
@@ -30,6 +42,8 @@ class OnboardScreen5 extends StatelessWidget {
 
               // Button to Open Date Picker
               ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: ButtonBackGroundColor),
                 onPressed: () async {
                   // Show Date Picker Dialog
                   DateTime? pickedDate = await showDatePicker(

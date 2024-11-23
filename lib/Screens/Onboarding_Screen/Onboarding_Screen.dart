@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_app/Screens/Auth_Screen/login_Screen.dart';
 import 'package:task_app/Screens/Onboarding_Screen/List_Of_Screen.dart/List_Of_Screen.dart';
+import 'package:task_app/Utils/Colors/Colors_Name.dart';
 
 class OnboardingScreen extends StatefulWidget {
   @override
@@ -52,7 +53,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: Center(
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey[300],
+                    backgroundColor: ButtonBackGroundColor,
                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
@@ -93,7 +94,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       width: _currentPage == index ? 20 : 10,
       margin: EdgeInsets.symmetric(horizontal: 5),
       decoration: BoxDecoration(
-        color: _currentPage == index ? Colors.blue : Colors.grey,
+        color: _currentPage == index ? ButtonBackGroundColor : Colors.grey,
         borderRadius: BorderRadius.circular(10),
       ),
     );

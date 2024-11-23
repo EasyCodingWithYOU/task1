@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:task_app/Provider/Onboard_Provider/Currency_Selection_Provider.dart';
+import 'package:task_app/Utils/Colors/Colors_Name.dart';
 
 class CurrencyDialog extends StatelessWidget {
   @override
@@ -8,6 +9,7 @@ class CurrencyDialog extends StatelessWidget {
     final currencyState = Provider.of<CurrencySelectionProvider>(context);
 
     return AlertDialog(
+      backgroundColor: Colors.cyan[100],
       title: Text('Select Currency'),
       content: Column(
         mainAxisSize: MainAxisSize.min,
@@ -21,6 +23,7 @@ class CurrencyDialog extends StatelessWidget {
           SizedBox(height: 20),
           // Show the continue button only when a currency is selected
           ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.green[200]),
             onPressed: currencyState.selectedCurrency != null
                 ? () {
                     Navigator.pop(context); // Close the dialog

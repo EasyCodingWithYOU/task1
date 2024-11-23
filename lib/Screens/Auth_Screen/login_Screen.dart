@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lottie/lottie.dart';
 import 'package:task_app/Utils/Icons_Name/Icons_Name.dart';
+import 'package:task_app/Utils/Lottie_Names/Lottie_Names.dart';
 import 'package:task_app/Utils/Widgets/Check_Box_Dialoge.dart';
 import 'package:task_app/Utils/Widgets/Rounded_Icon_Button.dart';
 
@@ -23,6 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
             padding: EdgeInsets.only(top: 30.h),
             child: Column(
               children: [
+                Lottie.asset(lottieName, height: 400.h, width: 400.w),
                 Text(
                   "Your journey has just ",
                   style:
