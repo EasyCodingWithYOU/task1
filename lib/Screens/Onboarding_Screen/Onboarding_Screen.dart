@@ -76,7 +76,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   },
                   child: Text(
                     _currentPage == screens.length - 1 ? "Get Started" : "Next",
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 16, color: textColor),
                   ),
                 ),
               ),

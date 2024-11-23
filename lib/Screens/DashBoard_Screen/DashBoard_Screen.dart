@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_app/Utils/Colors/Colors_Name.dart';
 
 class DashBoardscreen extends StatefulWidget {
   const DashBoardscreen({super.key});
@@ -12,7 +13,10 @@ class _DashBoardscreenState extends State<DashBoardscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Dashboard'),
+        child: Text(
+          'Dashboard',
+          style: TextStyle(color: textColor),
+        ),
       ),
     );
   }

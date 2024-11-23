@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
+import 'package:task_app/Utils/Colors/Colors_Name.dart';
 import 'package:task_app/Utils/Lottie_Names/Lottie_Names.dart';
 
 class CustomTopRow extends StatelessWidget {
@@ -18,7 +19,7 @@ class CustomTopRow extends StatelessWidget {
           constraints:
               const BoxConstraints(maxWidth: 250), // Max width of the bubble
           decoration: BoxDecoration(
-            color: Colors.teal[200], // Bubble color
+            color: ButtonBackGroundColor, // Bubble color
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(20.0), // Rounded corner
               topRight: Radius.circular(20.0), // Rounded corner
@@ -37,7 +38,7 @@ class CustomTopRow extends StatelessWidget {
             textValue,
             style: TextStyle(
               fontSize: 16.0,
-              color: Colors.black87, // Text color
+              color: textColor, // Text color
             ),
           ),
         ),
