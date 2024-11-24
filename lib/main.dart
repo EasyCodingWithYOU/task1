@@ -8,6 +8,7 @@ import 'package:task_app/Provider/Onboard_Provider/Date_picker_Provider.dart';
 import 'package:task_app/Provider/Onboard_Provider/Onboard_Screen_2_provider.dart';
 import 'package:task_app/Provider/Onboard_Provider/Onboard_provider.dart';
 import 'package:task_app/Provider/Onboard_Provider/Time_Picker_Provider.dart';
+import 'package:task_app/Screens/DashBoard_Screen/DashBoard_Screen.dart';
 import 'package:task_app/Screens/Onboarding_Screen/Onboarding_Screen.dart';
 
 void main() {
@@ -69,9 +70,9 @@ class _SplashScreenState extends State<SplashScreen> {
     } else {
       // await prefs.setBool('isFirstTime', true);
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => OnboardingScreen()));
-      // context,
-      // MaterialPageRoute(builder: (context) => DashBoardscreen()));
+          // context, MaterialPageRoute(builder: (context) => OnboardingScreen()));
+          context,
+          MaterialPageRoute(builder: (context) => DashBoardscreen()));
     }
   }
 
